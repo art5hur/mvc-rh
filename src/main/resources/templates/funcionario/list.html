@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,8 +36,8 @@
                     <td></td>
                     <td></td>
                     <td>
-                        <a class="btn-sm btn-primary" href="/funcionarios/update">Editar</a>
-                        <a class="btn-sm btn-danger" href="/funcionarios/delete">Excluir</a>
+                        <a class="btn-sm btn-primary" th:href="@{/funcionarios/update/{id}(id=${funcionario.id})}">Editar</a>
+                        <a class="btn-sm btn-danger" th:href="@{/funcionarios/delete/{id}(id=${funcionario.id})}">Excluir</a>
                     </td>
 
                 </tr>
