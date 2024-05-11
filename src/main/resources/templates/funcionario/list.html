@@ -33,6 +33,12 @@
                 <tr th:each="funcionario : ${funcionarios}">
                     <td th:text="${funcionario.id}"></td>
                     <td th:text="${funcionario.nome}"></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <a class="btn-sm btn-primary" href="/funcionarios/update">Editar</a>
+                        <a class="btn-sm btn-danger" href="/funcionarios/delete">Excluir</a>
+                    </td>
 
                 </tr>
 

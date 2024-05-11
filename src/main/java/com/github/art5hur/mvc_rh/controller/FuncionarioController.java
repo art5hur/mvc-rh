@@ -29,10 +29,7 @@ public class FuncionarioController {
 	
 	@PostMapping("save")
 	public String save(@ModelAttribute Funcionario funcionario) {
-		System.out.println(funcionario.getId());
-		System.out.println(funcionario.getNome());
-		
-		
+		funcionarioRepository.save(funcionario);
 		return "redirect:/funcionarios";
 	}
 	
