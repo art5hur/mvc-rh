@@ -14,9 +14,9 @@
 
 	<div id="content">
     <div class="container">
-        <h1>Listagem de Cargos</h1>
+        <h3>Listagem de Cargos</h3>
 
-        <button class="btn btn-primary btn-sm">Novo</button>
+        <a href="cargos/add" class="btn-sm btn-primary"><i class="fas fa-plus"></i></a>
 
         <table class="table table-hover table-sm">
             <thead>
@@ -27,18 +27,16 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Devenvolvedor</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Scrum Master</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Gerente</td>
-                </tr>
+            <tr th:each="cargo : ${cargos}">
+                <td th:text="${cargo.id}"></td>
+                <td th:text="${cargo.nome}"></td>
+                <td th:text="${cargo.departamento != null ? cargo.departamento.nome : '--'}"></td>
+                <td>
+                    <a class="btn-sm btn-primary" th:href="@{/cargos/update/{id}(id=${cargo.id})}">Editar</a>
+                    <a class="btn-sm btn-danger" th:href="@{/cargos/delete/{id}(id=${cargo.id})}">Excluir</a>
+                </td>
+
+            </tr>
             </tbody>
 
 
